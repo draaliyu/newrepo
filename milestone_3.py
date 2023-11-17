@@ -1,42 +1,35 @@
 import random
 
-def get_random_word(word):
-    """Reurn a random word from the created list"""
-    return random.choice(word)
-
-def ask_for_input(user_prompt):
-    """Promt the user to enter a single character"""
-    while True:        
-        usr_input = input(user_prompt)
-        if len(usr_input) == 1 and usr_input.isalpha():
-       	     return usr_input.lower()# convert to lowercase
-        print("Invalid letter. Please, enter a single alphabetical character.")
+def get_random_word(words):
+    """Return a random word from the list."""
+    return random.choice(words).lower()
 
 def check_guess(guess, word):
-    #Check if the guess is in the word
+    """Check if the guess is in the word, converting the guess to lowercase."""
+    guess = guess.lower()
     if guess in word:
-        print(f'Good Guess! {guess} is in the word.')
+        print(f"Good guess! {guess} is in the word.")
     else:
-        print('Sorry, {guess} is not in the word. Try again.')
+        print(f"Sorry, {guess} is not in the word. Try again.")
+
+def ask_for_input(prompt, word):
+    """Prompt the user for a single alphabetical character and check the guess."""
+    while True:
+        user_input = input(prompt)
+        if len(user_input) == 1 and user_input.isalpha():
+            check_guess(user_input, word)
+            break
+        else:
+            print("Oops! That is not a valid input.")
 
 def main():
-    #Creating a list of 5 favourite fruits
-    favourite_fruits = ['Apple', 'Orange', 'Banana', 'Cheery', 'Mango']
+    favorite_fruits = ['Apple', 'Banana', 'Cherry', 'Orange', 'Mango']
+    print("Favorite Fruits:", favorite_fruits)
 
-    #Printing the created list to the screen
-    print('Favourite Fruits: ',favourite_fruits)
+    random_word = get_random_word(favorite_fruits)
+    print(f"Random Fruit: {random_word}")  # Optional: for debugging or display.
 
-    #Creating a random choice from the list and assign it to variable, word
-    random_word = get_random_word(favourite_fruits)
-
-    #Printing out the choice word
-    print(f"Random Fruit: {random_word}")
-
-    #Prompt the user for an input
-    guess = ask_for_input('Please enter a single character: ')
-    check_guess(guess,random_word.lower())
-
-    
+    ask_for_input("Please enter a single character: ", random_word)
 
 if __name__ == "__main__":
     main()
