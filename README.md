@@ -21,6 +21,7 @@ amount of attempts
 ## File Structure of the Project
 - 'milestone_2.py': This is the first Python script
 - 'milestone_3.py': This python script contain structured code, with additional functions
+- 'milestone_4.py': This python script is an advanced version, where a user is asked to guess, and has a maximum of five attempts
 - 'README.md': Documentation for the project
 
 
