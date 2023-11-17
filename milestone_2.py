@@ -1,26 +1,36 @@
 import random
 
-#creating a list of 5 favourite fruits
-favourite_fruits = ['Apple', 'Orange', 'Banana', 'Cheery', 'Mango']
+def get_random_word(word):
+    """Reurn a random word from the created list"""
+    return random.choice(word)
 
-#Assigning the list to a variable, word_list
-word_list= favourite_fruits
+def get_single_character_input(user_prompt):
+    """Promt the user to enter a single character"""
+    while True:        
+        usr_input = input(user_prompt)
+        if len(usr_input) == 1 and usr_input.isalpha():
+       	     return usr_input
+        print("Oops! That is not a valid input.")
 
-#Printing the created list to the screen
-print(word_list)
+def main():
+    #Creating a list of 5 favourite fruits
+    favourite_fruits = ['Apple', 'Orange', 'Banana', 'Cheery', 'Mango']
 
-#Creating a random choice from the list and assign it to variable, word
-word = random.choice(word_list)
+    #Assigning the list to a variable, word_list
+    word_list= favourite_fruits
 
-#Printing out the choice word
-print(word)
+    #Printing the created list to the screen
+    print(word_list)
 
-#Prompt the user for an input
-guess = input('Please enter an input: ')
+    #Creating a random choice from the list and assign it to variable, word
+    word = get_random_word(word_list)
 
-#Check that the user input is a single character
-if len(guess) == 1 and guess.isalpha():
+    #Printing out the choice word
+    print(f"Random Fruit: {word}")
+
+    #Prompt the user for an input
+    guess = get_single_character_input('Please enter an input: ')
     print('Good Guess!')
-else:
-    print('Oops! This is not a valid input.')
 
+if __name__ == "__main__":
+    main()
