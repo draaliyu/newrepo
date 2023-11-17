@@ -19,8 +19,8 @@ print(word)
 guess = input('Please enter an input: ')
 
 #Check that the user input is a single character
-if len(guess) == 1:
-    print('You entered:', guess)
+if len(guess) == 1 and guess.isalpha():
+    print('Good Guess!')
 else:
-    print('Error: Please enter only one character.')
+    print('Oops! This is not a valid input.')
 
