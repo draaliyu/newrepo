@@ -6,10 +6,10 @@ def get_random_word(word):
 
 def get_single_character_input(user_prompt):
     """Promt the user to enter a single character"""
-    while True:        
-        usr_input = input(user_prompt)
-        if len(usr_input) == 1 and usr_input.isalpha():
-       	     return usr_input
+    usr_input = input(user_prompt)
+    if len(usr_input) == 1 and usr_input.isalpha():
+        print('Good Guess!')
+    else:
         print("Oops! That is not a valid input.")
 
 def main():
@@ -27,7 +27,7 @@ def main():
 
     #Prompt the user for an input
     guess = get_single_character_input('Please enter an input: ')
-    print('Good Guess!')
+    
 
 if __name__ == "__main__":
     main()
