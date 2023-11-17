@@ -16,17 +16,14 @@ def main():
     #Creating a list of 5 favourite fruits
     favourite_fruits = ['Apple', 'Orange', 'Banana', 'Cheery', 'Mango']
 
-    #Assigning the list to a variable, word_list
-    word_list= favourite_fruits
-
     #Printing the created list to the screen
-    print(word_list)
+    print(favourite_fruits)
 
     #Creating a random choice from the list and assign it to variable, word
-    word = get_random_word(word_list)
+    random_word = get_random_word(favourite_fruits)
 
     #Printing out the choice word
-    print(f"Random Fruit: {word}")
+    print(f"Random Fruit: {random_word}")
 
     #Prompt the user for an input
     guess = get_single_character_input('Please enter an input: ')
